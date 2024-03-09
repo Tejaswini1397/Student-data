@@ -32,8 +32,8 @@ public class StudentController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorMessage);
         }
     }
-    @PutMapping("/update/{roll_no}")
-    public Student updateStudent(@PathVariable int roll_no, @RequestParam String newName){
+    @PutMapping("/update/{roll_no}/{newName}")
+    public Student updateStudent(@PathVariable int roll_no, @PathVariable String newName){
       return  studentService.updateStudent(roll_no,newName);
 
     }
